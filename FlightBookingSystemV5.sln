@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightBookingSystemV5", "FlightBookingSystemV5\FlightBookingSystemV5.csproj", "{05F3E814-9472-48BE-A91C-D1F18D4C3248}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User.Management.Service", "User.Management.Service\User.Management.Service.csproj", "{7420F9E8-DD00-4379-8412-D74A36CC8EE1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05F3E814-9472-48BE-A91C-D1F18D4C3248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05F3E814-9472-48BE-A91C-D1F18D4C3248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05F3E814-9472-48BE-A91C-D1F18D4C3248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05F3E814-9472-48BE-A91C-D1F18D4C3248}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7420F9E8-DD00-4379-8412-D74A36CC8EE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7420F9E8-DD00-4379-8412-D74A36CC8EE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7420F9E8-DD00-4379-8412-D74A36CC8EE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7420F9E8-DD00-4379-8412-D74A36CC8EE1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB5C181F-608D-409F-B55F-C2E210E9C39F}
+	EndGlobalSection
+EndGlobal
