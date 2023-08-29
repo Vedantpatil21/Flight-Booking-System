@@ -1,0 +1,61 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <table *ngIf="row != null" class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Airline</th>
+                <th>Starting Point</th>
+                <th>End Point</th>
+                <th>Start Time</th>
+                <th>Economy Class Price</th>
+                <th>Business Class Price</th>
+                <th>Economy Seats Available</th>
+                <th>Business Seats Available</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{row.airlineName}}</td>
+                <td>{{row.startLoc}}</td>
+                <td>{{row.endLoc}}</td>
+                <td>{{row.startDate}}</td>
+                <td>{{row.eClassPrice}}</td>
+                <td>{{row.bClassPrice}}</td>
+                <td>{{row.eClassAvailableSeats}}</td>
+                <td>{{row.bClassAvailableSeats}}</td>
+            </tr>
+        </tbody>
+      </table>
+</div>
+
+
+
+<div class="my-5 container formContainer">
+    <h2 class="mb-4 text-center text-dark">Booking</h2>
+    <form (ngSubmit)="onSubmit()" class="container">
+        <div class="mb-3">
+            <label for="userName" class="form-label">Passenger Name</label>
+            <input type="text" [(ngModel)]="userName" class="form-control" id="userName" name="userName">
+        </div>
+        <div class="mb-3">
+            <label for="age" class="form-label">Age</label>
+            <input type="text" class="form-control" id="age" name="age" [(ngModel)]="age">
+        </div>
+        <div class="mb-3">
+            <label for="gender" class="form-label">Gender</label>
+            <select class="form-select" id="gender" name="gender" [(ngModel)]="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="ticketType" class="form-label">Ticket Type</label>
+            <select class="form-select" id="ticketType" name="ticketType" [(ngModel)]="ticketType">
+                <option value="Economy">Economy</option>
+                <option value="Business">Business</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Book</button>
+    </form>
+</div>

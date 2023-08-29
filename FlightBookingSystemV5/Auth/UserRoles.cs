@@ -4,5 +4,6 @@
     {
         public const string Airline = "Airline";
         public const string User = "User";
+        public const string Admin = "Admin";
     }
 }
