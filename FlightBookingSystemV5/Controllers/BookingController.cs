@@ -34,7 +34,8 @@ namespace FlightBookingSystemV5.Controllers
             //var userId = user.Id;
             //var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             //var userData = _userManager.FindByIdAsync(userId);
-            string userId = "7900fcc6-4328-4f20-a0da-46de7bfbd971";
+            string userId = "7b898edd-da6b-4d21-a1b3-55019735d801";
+      //7900fcc6 - 4328 - 4f20 - a0da - 46de7bfbd971
 
             //if (userId != null)
             //{
