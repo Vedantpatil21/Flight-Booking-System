@@ -1,0 +1,188 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <button type="button" class="btn btn-primary my-5" data-bs-toggle="modal" data-bs-target="#addAirlineModal">
+        Add Flight
+    </button>
+<table *ngIf="resultArray!=null && resultArray.length>0" class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Journey ID</th>
+            <th>Flight ID</th>
+            <th>Airline</th>
+            <th>Starting Point</th>
+            <th>End Point</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Economy Class Price</th>
+            <th>Business Class Price</th>
+            <th>Economy Seats Capacity</th>
+            <th>Economy Seats Available</th>
+            <th>Business Seats Capacity</th>
+            <th>Business Seats Available</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of resultArray">
+            <td>{{row.journeyId}}</td>
+            <td>{{row.flightId}}</td>
+            <td>{{row.airlineName}}</td>
+            <td>{{row.startLoc}}</td>
+            <td>{{row.endLoc}}</td>
+            <td>{{row.startTime}}</td>
+            <td>{{row.endTime}}</td>
+            <td>{{row.eClassPrice}}</td>
+            <td>{{row.bClassPrice}}</td>
+            <td>{{row.eClassCapacity}}</td>
+            <td>{{row.eClassAvailableSeats}}</td>
+            <td>{{row.bClassCapacity}}</td>
+            <td>{{row.bClassAvailableSeats}}</td>
+            <td>
+                <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#updateAirlineModal" (click)="editFlightClicked(row.journeyId)">Edit</button>
+                <button class="btn btn-sm btn-danger" (click)="deleteFlight(row.journeyId)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+
+<!-- Button trigger modal -->
+
+  
+  <!-- Add Modal -->
+  <div class="modal fade" id="addAirlineModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Add Flight</h5>
+          <button type="button" id="addFlightModalClose" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form (ngSubmit)="addFlight()" class="container">
+                <div class="mb-3">
+                    <label for="flightId" class="form-label">Flight ID</label>
+                    <input type="text" [(ngModel)]="flightId" class="form-control" id="flightId" name="flightId">
+                </div>
+                <div class="mb-3">
+                    <label for="airlineName" class="form-label">Airline Name</label>
+                    <input type="text" [(ngModel)]="airlineName" class="form-control" id="airlineName" name="airlineName" disabled>
+                </div>
+                <div class="mb-3">
+                    <label for="startLoc" class="form-label">Starting Point</label>
+                    <input type="text" [(ngModel)]="startLoc" class="form-control" id="startLoc" name="startLoc">
+                </div>
+                <div class="mb-3">
+                    <label for="endLoc" class="form-label">Ending Point</label>
+                    <input type="text" [(ngModel)]="endLoc" class="form-control" id="endLoc" name="endLoc">
+                </div>
+                <div class="mb-3">
+                    <label for="startTime" class="form-label">Start Time</label>
+                    <input type="datetime-local" [min]="currentDate" class="form-control" id="startTime" name="startTime"
+                        [(ngModel)]="startTime">
+                </div>
+                <div class="mb-3">
+                    <label for="endTime" class="form-label">End Time</label>
+                    <input type="datetime-local" [min]="currentDate" class="form-control" id="endTime" name="endTime"
+                        [(ngModel)]="endTime">
+                </div>
+                <div class="mb-3">
+                    <label for="eClassPrice" class="form-label">Economy Class Price</label>
+                    <input type="text" [(ngModel)]="eClassPrice" class="form-control" id="eClassPrice" name="eClassPrice">
+                </div>
+                <div class="mb-3">
+                    <label for="bClassPrice" class="form-label">Bussiness Class Price</label>
+                    <input type="text" [(ngModel)]="bClassPrice" class="form-control" id="bClassPrice" name="bClassPrice">
+                </div>
+                <div class="mb-3">
+                    <label for="eClassCapacity" class="form-label">Economy Class Capacity</label>
+                    <input type="text" [(ngModel)]="eClassCapacity" class="form-control" id="eClassCapacity" name="eClassCapacity">
+                </div>
+                <div class="mb-3">
+                    <label for="eClassAvailableSeats" class="form-label">Economy Class AvailableSeats</label>
+                    <input type="text" [(ngModel)]="eClassAvailableSeats" class="form-control" id="eClassAvailableSeats" name="eClassAvailableSeats">
+                </div>
+                <div class="mb-3">
+                    <label for="bClassCapacity" class="form-label">Bussiness Class Capacity</label>
+                    <input type="text" [(ngModel)]="bClassCapacity" class="form-control" id="bClassCapacity" name="bClassCapacity">
+                </div>
+                <div class="mb-3">
+                    <label for="bClassAvailableSeats" class="form-label">Bussiness Class AvailableSeats</label>
+                    <input type="text" [(ngModel)]="bClassAvailableSeats" class="form-control" id="bClassAvailableSeats" name="bClassAvailableSeats">
+                </div>
+
+                <button type="submit" class="btn btn-success">Add Flight</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Update Modal -->
+  <div class="modal fade" id="updateAirlineModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Update Flight Details</h5>
+          <button type="button" id="updateFlightModalClose" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form (ngSubmit)="editFlight()" class="container">
+                <div class="mb-3">
+                    <label for="flightId" class="form-label">Flight ID</label>
+                    <input type="text" [(ngModel)]="flightId" class="form-control" id="flightId" name="flightId">
+                </div>
+                <div class="mb-3">
+                    <label for="airlineName" class="form-label">Airline Name</label>
+                    <input type="text" [(ngModel)]="airlineName" class="form-control" id="airlineName" name="airlineName" disabled>
+                </div>
+                <div class="mb-3">
+                    <label for="startLoc" class="form-label">Starting Point</label>
+                    <input type="text" [(ngModel)]="startLoc" class="form-control" id="startLoc" name="startLoc">
+                </div>
+                <div class="mb-3">
+                    <label for="endLoc" class="form-label">Ending Point</label>
+                    <input type="text" [(ngModel)]="endLoc" class="form-control" id="endLoc" name="endLoc">
+                </div>
+                <div class="mb-3">
+                    <label for="startTime" class="form-label">Start Time</label>
+                    <input type="datetime-local" [min]="currentDate" class="form-control" id="startTime" name="startTime"
+                        [(ngModel)]="startTime">
+                </div>
+                <div class="mb-3">
+                    <label for="endTime" class="form-label">End Time</label>
+                    <input type="datetime-local" [min]="currentDate" class="form-control" id="endTime" name="endTime"
+                        [(ngModel)]="endTime">
+                </div>
+                <div class="mb-3">
+                    <label for="eClassPrice" class="form-label">Economy Class Price</label>
+                    <input type="text" [(ngModel)]="eClassPrice" class="form-control" id="eClassPrice" name="eClassPrice">
+                </div>
+                <div class="mb-3">
+                    <label for="bClassPrice" class="form-label">Bussiness Class Price</label>
+                    <input type="text" [(ngModel)]="bClassPrice" class="form-control" id="bClassPrice" name="bClassPrice">
+                </div>
+                <div class="mb-3">
+                    <label for="eClassCapacity" class="form-label">Economy Class Capacity</label>
+                    <input type="text" [(ngModel)]="eClassCapacity" class="form-control" id="eClassCapacity" name="eClassCapacity">
+                </div>
+                <div class="mb-3">
+                    <label for="eClassAvailableSeats" class="form-label">Economy Class AvailableSeats</label>
+                    <input type="text" [(ngModel)]="eClassAvailableSeats" class="form-control" id="eClassAvailableSeats" name="eClassAvailableSeats">
+                </div>
+                <div class="mb-3">
+                    <label for="bClassCapacity" class="form-label">Bussiness Class Capacity</label>
+                    <input type="text" [(ngModel)]="bClassCapacity" class="form-control" id="bClassCapacity" name="bClassCapacity">
+                </div>
+                <div class="mb-3">
+                    <label for="bClassAvailableSeats" class="form-label">Bussiness Class AvailableSeats</label>
+                    <input type="text" [(ngModel)]="bClassAvailableSeats" class="form-control" id="bClassAvailableSeats" name="bClassAvailableSeats">
+                </div>
+
+                <button type="submit" class="btn btn-success">Update Details</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>

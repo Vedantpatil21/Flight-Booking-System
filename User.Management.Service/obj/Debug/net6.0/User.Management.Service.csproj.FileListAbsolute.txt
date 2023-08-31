@@ -10,3 +10,15 @@ C:\Users\lenovo\source\repos\FlightBookingSystemV5\User.Management.Service\obj\D
 C:\Users\lenovo\source\repos\FlightBookingSystemV5\User.Management.Service\obj\Debug\net6.0\refint\User.Management.Service.dll
 C:\Users\lenovo\source\repos\FlightBookingSystemV5\User.Management.Service\obj\Debug\net6.0\User.Management.Service.pdb
 C:\Users\lenovo\source\repos\FlightBookingSystemV5\User.Management.Service\obj\Debug\net6.0\ref\User.Management.Service.dll
+C:\Users\Lenovo\Desktop\Case Study\FlightBookingSystemV5\User.Management.Service\bin\Debug\net6.0\User.Management.Service.deps.json
+C:\Users\Lenovo\Desktop\Case Study\FlightBookingSystemV5\User.Management.Service\bin\Debug\net6.0\User.Management.Service.dll
+C:\Users\Lenovo\Desktop\Case Study\FlightBookingSystemV5\User.Management.Service\bin\Debug\net6.0\User.Management.Service.pdb
+C:\Users\Lenovo\Desktop\Case Study\FlightBookingSystemV5\User.Management.Service\obj\Debug\net6.0\User.Management.Service.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\Case Study\FlightBookingSystemV5\User.Management.Service\obj\Debug\net6.0\User.Management.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\Desktop\Case Study\FlightBookingSystemV5\User.Management.Service\obj\Debug\net6.0\User.Management.Service.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Desktop\Case Study\FlightBookingSystemV5\User.Management.Service\obj\Debug\net6.0\User.Management.Service.AssemblyInfo.cs
+C:\Users\Lenovo\Desktop\Case Study\FlightBookingSystemV5\User.Management.Service\obj\Debug\net6.0\User.Management.Service.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\Case Study\FlightBookingSystemV5\User.Management.Service\obj\Debug\net6.0\User.Management.Service.dll
+C:\Users\Lenovo\Desktop\Case Study\FlightBookingSystemV5\User.Management.Service\obj\Debug\net6.0\refint\User.Management.Service.dll
+C:\Users\Lenovo\Desktop\Case Study\FlightBookingSystemV5\User.Management.Service\obj\Debug\net6.0\User.Management.Service.pdb
+C:\Users\Lenovo\Desktop\Case Study\FlightBookingSystemV5\User.Management.Service\obj\Debug\net6.0\ref\User.Management.Service.dll

@@ -1,0 +1,28 @@
+@media screen and (min-width:721px){
+    .formContainer{
+        width: 40%;
+        box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.5);
+        padding: 4%;
+        border-radius: 4%;
+        /* backdrop-filter: blur(0.5vw); */
+    }
+}
+
+@media screen and (max-width:720px){
+    .formContainer{
+        width: 100%;
+    }
+}
+   
+   
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('C:/Users/Lenovo/Desktop/Case Study/FlightBookingSystemV5/src/assets/images/flight booking system.jpg');
+        background-size: cover;
+        background-position: center;
+        background-color: #ffffff;
+      }
+  
+     

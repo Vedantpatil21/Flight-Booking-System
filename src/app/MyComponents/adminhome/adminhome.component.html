@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div class="my-5 container formContainer">
+    <h2 class="mb-4 text-center text-dark">Add Airline</h2>
+    <form (ngSubmit)="onSubmit()" class="container">
+        <div class="mb-3">
+            <label for="name" class="form-label">Airline Name</label>
+            <input type="text" [(ngModel)]="name" class="form-control" id="name" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" class="form-control" id="email" name="email" [(ngModel)]="email">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password">
+        </div>
+        <div class="mb-3">
+            <label for="cPassword" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="cPassword" name="cPassword" [(ngModel)]="cPassword">
+        </div>
+        <button type="submit" class="btn btn-success">Add Airline</button>
+    </form>
+</div>
